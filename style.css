@@ -534,8 +534,8 @@ section {
   transform: translateX(5px);
 }
 
-.hero .hero-img {
-  text-align: right;
+.hero img {
+  opacity: 0.9  ;
 }
 
 @media (min-width: 1024px) {
@@ -834,6 +834,17 @@ section {
     display: none;
   }
 }
+
+.card {
+  border-radius: 15px; 
+  transition: all 0.3s ease-in-out;
+}
+
+.card.selected {
+  outline: 3px solid #6942cb; 
+  box-shadow: 0px 0px 15px rgba(105, 66, 203, 0.5);
+}
+
 
 
 /*--------------------------------------------------------------
