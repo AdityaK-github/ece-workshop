@@ -504,7 +504,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 20px;
 }
 
@@ -589,7 +589,7 @@ section {
 /* PC View: Move Image Slightly Down */
 @media (min-width: 992px) {
   .hero-container {
-    top: 70%; 
+    top: 72%; 
     transform: translate(-50%, -40%);
   }
 }
