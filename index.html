@@ -1674,6 +1674,33 @@
       </div>
     </footer>
     <!-- End Footer -->
+    <p>Visitors: <span id="counter">Loading...</span></p>
+    <script>
+      const binId = "679d3d89ad19ca34f8f7b223";
+      const accessKey = "$2a$10$440qLYrs5zjZQULz1dMVoOz7vdunPGf54oYqxr3U3.7mw2o6dI3SC";
+      const url = `https://api.jsonbin.io/v3/b/${binId}/latest`;
+    
+      async function updateCounter() {
+        const res = await fetch(url, { headers: { "X-Access-Key": accessKey } });
+        const data = await res.json();
+        const currentCount = data.record.visits || 0; 
+    
+        const newCount = currentCount + 1;
+    
+        await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ visits: newCount })
+        });
+    
+        document.getElementById("counter").innerText = newCount;
+      }
+    
+      updateCounter();
+    </script>
+    
 
     <a
       href="#"
@@ -1722,7 +1749,9 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+
     <!-- Template Main JS File -->
     <script src="main.js" async></script>
+
   </body>
 </html>
